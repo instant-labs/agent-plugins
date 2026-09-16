@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "instantdomainsearch": {
+      "url": "https://api.instantdomainsearch.com/mcp"
+    }
+  }
+}
