@@ -1,0 +1,14 @@
+{
+  "name": "instantdomainsearch",
+  "displayName": "Instant Domain Search",
+  "version": "1.0.0",
+  "description": "Domain availability search from Instant Domain Search. Check a name across hundreds of extensions, verify full domain names in bulk, and generate prefix and suffix alternatives, with aftermarket listings, premium prices, and a registration link for every result. No account or API key required.",
+  "author": {
+    "name": "Instant Domain Search",
+    "url": "https://instantdomainsearch.com"
+  },
+  "homepage": "https://instantdomainsearch.com/mcp",
+  "repository": "https://github.com/instant-labs/agent-plugins.git",
+  "license": "MIT",
+  "keywords": ["instantdomainsearch", "instant domain search", "instantdomainsearch.com", "instant domain search mcp"]
+}
