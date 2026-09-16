@@ -1,0 +1,29 @@
+{
+  "name": "instant-marketplace",
+  "owner": {
+    "name": "Instant Domain Search"
+  },
+  "metadata": {
+    "description": "Instant Domain Search plugins for Cursor and Grok Bot"
+  },
+  "plugins": [
+    {
+      "name": "instantdomainsearch",
+      "source": "./plugins/instantdomainsearch",
+      "description": "Domain availability search from Instant Domain Search. Check a name across hundreds of extensions, verify full domain names in bulk, and generate prefix and suffix alternatives, with aftermarket listings, premium prices, and a registration link for every result. No account or API key required.",
+      "author": {
+        "name": "Instant Domain Search"
+      },
+      "homepage": "https://instantdomainsearch.com/mcp",
+      "category": "development",
+      "keywords": [
+        "instantdomainsearch",
+        "instant domain search",
+        "instantdomainsearch.com",
+        "instant domain search mcp"
+      ],
+      "domains": ["instantdomainsearch.com"],
+      "displayName": "Instant Domain Search"
+    }
+  ]
+}
