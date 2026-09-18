@@ -1,10 +1,10 @@
 {
   "name": "instant-marketplace",
   "owner": {
-    "name": "Instant Domain Search"
+    "name": "Instant Labs"
   },
   "metadata": {
-    "description": "Instant Domain Search plugins for Claude Code"
+    "description": "Instant Labs plugins for Claude Code"
   },
   "plugins": [
     {
@@ -12,7 +12,7 @@
       "source": "./plugins/instantdomainsearch",
       "description": "Domain availability search from Instant Domain Search. Check a name across hundreds of extensions, verify full domain names in bulk, and generate prefix and suffix alternatives, with aftermarket listings, premium prices, and a registration link for every result. No account or API key required.",
       "author": {
-        "name": "Instant Domain Search"
+        "name": "Instant Labs"
       },
       "homepage": "https://instantdomainsearch.com/mcp",
       "category": "development",
