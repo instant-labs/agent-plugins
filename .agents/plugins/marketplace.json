@@ -1,7 +1,7 @@
 {
   "name": "instant-marketplace",
   "interface": {
-    "displayName": "Instant Domain Search"
+    "displayName": "Instant Labs"
   },
   "plugins": [
     {
