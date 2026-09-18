@@ -1,6 +1,6 @@
-# Instant agent plugins
+# Instant Labs agent plugins
 
-Plugins that connect coding agents to Instant's products. Each plugin bundles
+Plugins that connect coding agents to Instant Labs' products. Each plugin bundles
 an MCP server pointer, skills that teach the agent when and how to use it, and
 slash commands. The same plugin directory installs into Claude Code, Codex,
 Cursor, Grok Bot, and Grok Build; only the manifest file differs per client.
