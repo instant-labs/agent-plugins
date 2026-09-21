@@ -105,6 +105,11 @@ serves every client.
 
 Run `python3 scripts/validate.py` before you push; CI runs the same check.
 
+## Claude directory submission
+
+See the [submission details](docs/claude-directory-submission.md) for listing
+copy, source links, and reviewer verification steps.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
