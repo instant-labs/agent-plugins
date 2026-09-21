@@ -1,0 +1,21 @@
+{
+  "name": "instant",
+  "displayName": "Instant",
+  "version": "1.0.1",
+  "description": "Find available domains and brandable names with instant.ai. Check names across extensions, verify domains in bulk, generate alternatives, and search USPTO trademark records. Free, with no account or API key required.",
+  "author": {
+    "name": "instant.ai",
+    "url": "https://instant.ai"
+  },
+  "homepage": "https://instant.ai/mcp",
+  "repository": "https://github.com/instant-labs/agent-plugins.git",
+  "license": "MIT",
+  "keywords": [
+    "instant",
+    "instant.ai",
+    "instant domain search",
+    "domain availability",
+    "domain brainstorming",
+    "uspto trademarks"
+  ]
+}

@@ -1,25 +1,26 @@
 ---
-name: instantdomainsearch
+name: instant
 description: >-
   Check whether domain names are registered and find alternatives using the
-  Instant Domain Search MCP server. Use whenever the user asks if a domain is
+  Instant MCP server. Use whenever the user asks if a domain is
   available, taken, or free; wants to check a name across extensions (.com,
   .io, .ai, .dev, and hundreds more); needs alternatives because a name is
   taken; or is picking a domain for a project, product, startup, or side
   project. Also use when naming a new app or repository so the suggested
-  name comes with a domain the user can actually register.
+  name comes with a domain the user can actually register. Also use when
+  the user asks to search USPTO trademark records or inspect a filing.
 ---
 
-# Instant Domain Search
+# Instant
 
-The `instantdomainsearch` MCP server reports domain registration status from
+The `instant` MCP server from [instant.ai](https://instant.ai) reports domain registration status from
 the index behind [instantdomainsearch.com](https://instantdomainsearch.com).
-It needs no account, API key, or configuration. Every result carries a
+It needs no account, API key, or configuration. Every domain result carries a
 `buy_url`, the page where the user registers the domain.
 
-## Tools
+## Domain tools
 
-The `instantdomainsearch` MCP server exposes three tools. Your client may
+Use these three tools on the `instant` MCP server. Your client may
 show them with the server name as a prefix; the tool is the same.
 
 | Tool | Use when | Key arguments |
@@ -42,17 +43,15 @@ show them with the server name as a prefix; the tool is the same.
 
 ### Argument rules
 
-The server does not normalize or reject malformed input. A name with an
-extension, a space, an uppercase letter, or a dotted `tlds` entry comes back
-as a nonsense domain (`acme.com.io`, `blue harbor.com`, `acme..io`) with
-`isRegistered: false`, which reads as available. Normalize before calling:
+The server rejects malformed domain input. Normalize before calling so names
+and extensions are sent in the expected form:
 
 - `name` is the label only: `acme`, never `acme.com`. Lowercase letters,
   digits, and hyphens; no spaces. Strip spaces from multi-word ideas
   (`"Blue Harbor"` → `blueharbor`).
 - `tlds` entries are lowercase with no leading dot: `["com", "io", "co.uk"]`.
 - `domains` entries are lowercase full names: `["acme.com", "shop.co.uk"]`.
-  The first dot separates label from extension. `Acme.COM` returns `null`.
+  The first dot separates label from extension; the server also lowercases names.
 - `generate_domain_variations` returns `.com` results only.
 
 ## Reading results
@@ -85,6 +84,25 @@ page runs the live check.
 - Treat `null` as unknown, not available.
 - Mention aftermarket listings and premium prices when present; a listing alone does not prove the domain is registered.
 - Do not list every field. Name, status, and the link are enough unless the user asks for more.
+
+## Trademark tools
+
+When the user asks about trademarks, call `search_trademarks` on the `instant`
+server with `query` set to the mark text. Keep spaces and Unicode in trademark
+queries. Optional `mode` is `exact`, `prefix`, `fuzzy` (default), or `phonetic`;
+`limit` is 1-100 (default 20). Use `statuses`, `classes`, and `owner` only when
+the user supplies those constraints.
+
+Call `get_trademark_details` with the returned eight-digit `serialNumber` as
+`serial_number` to inspect a filing. Preserve leading zeros. Report the record's status, relevant
+goods and services, and snapshot freshness. An empty search or an available
+domain does not establish trademark clearance.
+
+## Tool feedback
+
+The server also exposes `submit_feedback`. Use it only when the user asks to
+send tool feedback. Exclude search queries, domain names, results, and private
+details from the message.
 
 ## Example
 

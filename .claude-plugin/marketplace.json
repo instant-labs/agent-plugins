@@ -1,29 +1,31 @@
 {
   "name": "instant-marketplace",
   "owner": {
-    "name": "Instant Labs"
+    "name": "instant.ai"
   },
   "metadata": {
-    "description": "Instant Labs plugins for Claude Code"
+    "description": "instant.ai plugins for Claude Code"
   },
   "plugins": [
     {
-      "name": "instantdomainsearch",
-      "source": "./plugins/instantdomainsearch",
-      "description": "Domain availability search from Instant Domain Search. Check a name across hundreds of extensions, verify full domain names in bulk, and generate prefix and suffix alternatives, with aftermarket listings, premium prices, and a registration link for every result. No account or API key required.",
+      "name": "instant",
+      "source": "./plugins/instant",
+      "description": "Find available domains and brandable names with instant.ai. Check names across extensions, verify domains in bulk, generate alternatives, and search USPTO trademark records. Free, with no account or API key required.",
       "author": {
-        "name": "Instant Labs"
+        "name": "instant.ai",
+        "url": "https://instant.ai"
       },
-      "homepage": "https://instantdomainsearch.com/mcp",
+      "homepage": "https://instant.ai/mcp",
       "category": "development",
       "keywords": [
-        "instantdomainsearch",
+        "instant",
+        "instant.ai",
         "instant domain search",
-        "instantdomainsearch.com",
-        "instant domain search mcp"
+        "domain availability",
+        "domain brainstorming",
+        "uspto trademarks"
       ],
-      "domains": ["instantdomainsearch.com"],
-      "displayName": "Instant Domain Search"
+      "displayName": "Instant"
     }
   ]
 }

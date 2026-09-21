@@ -5,7 +5,7 @@ description: >-
   each one for an available domain in the same pass. Use when the user asks
   for name ideas, business names, startup names, app names, or "what should I
   call this", and a domain is part of what makes a name usable. Pairs
-  generated ideas with the instantdomainsearch MCP tools so every suggestion
+  generated ideas with the instant MCP tools so every suggestion
   is one the user can register.
 ---
 
@@ -24,7 +24,7 @@ and expand on the best root when nothing fits.
    to spell, no hyphens or digits unless they mean something. Mix invented
    words, compounds, and real words with a twist.
 3. **Check them in one call.** `check_domain_availability` on the
-   `instantdomainsearch` MCP server, with every candidate as `<name>.com` (at
+   `instant` MCP server, with every candidate as `<name>.com` (at
    most 50 per call). Add a second call for `.io`, `.ai`, `.dev`, or `.app`
    when the brief is a tech product.
 4. **Expand the strongest roots.** For the best two or three names that are
@@ -39,8 +39,8 @@ and expand on the best root when nothing fits.
 ## Guardrails
 
 - Never suggest a name you did not check.
-- Lowercase candidates and strip spaces before checking; the server does not
-  normalize input and a malformed name comes back as available.
+- Lowercase candidates and strip spaces before checking; the server rejects
+  malformed domain input.
 - `isRegistered: null` means the index has no data for that extension; label
   it unknown, not available.
 - Prefer `.com` unless the user names another extension or the product is
