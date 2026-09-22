@@ -4,7 +4,8 @@ Domain search and name ideas from [instant.ai](https://instant.ai), inside your
 coding agent. Check a name across
 hundreds of extensions, verify full domain names in bulk, and generate
 alternatives when a name is taken. Every domain result links to the registration
-page on [instantdomainsearch.com](https://instantdomainsearch.com).
+page on [instantdomainsearch.com](https://instantdomainsearch.com). Search indexed
+USPTO trademark records and inspect matching filings while choosing a name.
 
 The plugin connects the agent to the hosted MCP server at
 `https://mcp.instant.ai/mcp`. It is free and needs
@@ -34,7 +35,7 @@ marketplace.
 
 | Component | Name | Purpose |
 | --- | --- | --- |
-| MCP server | `instant` | `search_domains`, `check_domain_availability`, `generate_domain_variations` |
+| MCP server | `instant` | Domain search, USPTO trademark records, and optional tool feedback |
 | Skill | `instant` | When to call which tool, argument rules, how to read and present results |
 | Skill | `domain-brainstorm` | Generate name ideas and check them for available domains in one pass |
 | Command | `/domain <name> [tld ...]` or `/domain a.com b.io` | Check a name across extensions, or a list of full names |
@@ -46,6 +47,14 @@ Claude Code namespaces commands as `/instant:domain`,
 Clients prefix tool names with the server, for example
 `instant__search_domains` in Grok Build.
 
+The hosted server exposes:
+
+- `search_domains`, `check_domain_availability`, and `generate_domain_variations`
+  for domain searches.
+- `search_trademarks` and `get_trademark_details` for indexed USPTO records.
+- `submit_feedback` for optional tool observations. Feedback must exclude search
+  queries, domain names, results, and private details.
+
 ## Network and credentials
 
 - The only endpoint the plugin calls is
@@ -55,6 +64,9 @@ Clients prefix tool names with the server, for example
   plugin sets no headers.
 - No hooks, agents, scripts, or local processes. The plugin is the MCP pointer
   plus markdown.
+- Tool calls send their arguments to Instant's hosted server. Searches read
+  domain or trademark data; `submit_feedback` writes feedback when requested.
+  The plugin does not register or purchase domains.
 
 ## Notes
 
@@ -67,6 +79,8 @@ Clients prefix tool names with the server, for example
   USD cents.
 - Limits: `search_domains` and `generate_domain_variations` return at most 100
   results; `check_domain_availability` takes at most 50 names per call.
+- Trademark search returns up to 100 matches and includes snapshot freshness.
+  An empty result does not establish that a name is legally clear to use.
 - The server also publishes prompts (`analyze-domain-brandability`,
   `domain-investment-strategy`, `generate-business-names`) and resources
   (`instant-domains://tld-categories`, `instant-domains://domain-guidelines`)

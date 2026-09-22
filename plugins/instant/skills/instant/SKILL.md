@@ -7,7 +7,8 @@ description: >-
   .io, .ai, .dev, and hundreds more); needs alternatives because a name is
   taken; or is picking a domain for a project, product, startup, or side
   project. Also use when naming a new app or repository so the suggested
-  name comes with a domain the user can actually register.
+  name comes with a domain the user can actually register. Also use when
+  the user asks to search USPTO trademark records or inspect a filing.
 ---
 
 # Instant
@@ -17,7 +18,7 @@ the index behind [instantdomainsearch.com](https://instantdomainsearch.com).
 It needs no account, API key, or configuration. Every domain result carries a
 `buy_url`, the page where the user registers the domain.
 
-## Tools
+## Domain tools
 
 Use these three tools on the `instant` MCP server. Your client may
 show them with the server name as a prefix; the tool is the same.
@@ -83,6 +84,25 @@ page runs the live check.
 - Treat `null` as unknown, not available.
 - Mention aftermarket listings and premium prices when present; a listing alone does not prove the domain is registered.
 - Do not list every field. Name, status, and the link are enough unless the user asks for more.
+
+## Trademark tools
+
+When the user asks about trademarks, call `search_trademarks` on the `instant`
+server with `query` set to the mark text. Keep spaces and Unicode in trademark
+queries. Optional `mode` is `exact`, `prefix`, `fuzzy` (default), or `phonetic`;
+`limit` is 1-100 (default 20). Use `statuses`, `classes`, and `owner` only when
+the user supplies those constraints.
+
+Call `get_trademark_details` with the returned eight-digit `serialNumber` as
+`serial_number` to inspect a filing. Preserve leading zeros. Report the record's status, relevant
+goods and services, and snapshot freshness. An empty search or an available
+domain does not establish trademark clearance.
+
+## Tool feedback
+
+The server also exposes `submit_feedback`. Use it only when the user asks to
+send tool feedback. Exclude search queries, domain names, results, and private
+details from the message.
 
 ## Example
 
