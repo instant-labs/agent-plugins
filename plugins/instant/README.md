@@ -31,6 +31,9 @@ Cursor and Grok Bot: search for **Instant** under Settings →
 Plugins, or import `https://github.com/instant-labs/agent-plugins` as a team
 marketplace.
 
+If you installed this plugin under its old id, follow the
+[upgrade steps](../../README.md#upgrading-from-instantdomainsearch) first.
+
 ## What you get
 
 | Component | Name | Purpose |

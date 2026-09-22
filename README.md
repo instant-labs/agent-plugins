@@ -53,6 +53,51 @@ npx skills add instant-labs/agent-plugins
 This installs the skills without the MCP server. Add the server yourself from
 [instant.ai/mcp](https://instant.ai/mcp).
 
+## Upgrading from instantdomainsearch
+
+We renamed this plugin. The plugin id, its main skill, and its MCP server are
+now `instant` instead of `instantdomainsearch`, and the server lives at
+`https://mcp.instant.ai/mcp`. The marketplace name is still
+`instant-marketplace`.
+
+Your client treats the new id as a different plugin, so an existing install
+keeps running the old one until you replace it. The old endpoint stays online,
+so nothing breaks in the meantime. To switch:
+
+Claude Code:
+
+```sh
+claude plugin uninstall instantdomainsearch@instant-marketplace
+claude plugin marketplace update instant-marketplace
+claude plugin install instant@instant-marketplace
+```
+
+Codex:
+
+```sh
+codex plugin remove instantdomainsearch@instant-marketplace
+codex plugin marketplace upgrade
+codex plugin add instant@instant-marketplace
+```
+
+Grok Build:
+
+```sh
+grok plugin uninstall instantdomainsearch
+grok plugin marketplace update
+grok plugin install instant --trust
+```
+
+Cursor and Grok Bot: remove **Instant Domain Search** under **Settings →
+Plugins**, refresh the marketplace, and install **Instant**.
+
+Start a new session afterwards so the renamed skills and tools load. In Claude
+Code the commands are now `/instant:domain` and `/instant:domain-variations`.
+If you installed the skills only, remove the old `instantdomainsearch` skill
+and run `npx skills add instant-labs/agent-plugins` again. If you added the
+MCP server by hand, replace its entry with `instant` at
+`https://mcp.instant.ai/mcp`.
+
 ## Layout
 
 ```text
