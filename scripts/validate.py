@@ -18,7 +18,10 @@ CATALOGS = {
     "cursor": ROOT / ".cursor-plugin" / "marketplace.json",
     "codex": ROOT / ".agents" / "plugins" / "marketplace.json",
 }
-GENERIC_KEYWORDS = {"domain", "domains", "mcp", "api", "cli", "search", "database", "deploy"}
+GENERIC_KEYWORDS = {
+    "domain", "domains", "mcp", "api", "cli", "search", "database", "deploy",
+    "domain availability", "domain brainstorming", "trademark", "trademarks", "uspto trademarks",
+}
 
 
 def load(path: Path):
@@ -54,6 +57,8 @@ def check_plugin(plugin: Path, problems: list[str]) -> dict:
         for field in SHARED_FIELDS:
             if m.get(field) != base.get(field):
                 problems.append(f"{rel}/{d}/plugin.json: {field} differs from .grok-plugin/plugin.json")
+        if d != ".codex-plugin" and m.get("displayName") != base.get("displayName"):
+            problems.append(f"{rel}/{d}/plugin.json: displayName differs from .grok-plugin/plugin.json")
     codex = manifests[".codex-plugin"]
     for field in ("skills", "mcpServers", "interface"):
         if field not in codex:
@@ -113,8 +118,10 @@ def check_catalogs(plugins: dict[str, dict], problems: list[str]) -> None:
                 problems.append(f"{path.relative_to(ROOT)}: {name} source is {path_value!r}")
             if client == "codex" and ("policy" not in entry or "category" not in entry):
                 problems.append(f"{path.relative_to(ROOT)}: {name} needs policy and category")
-            if client != "codex" and entry.get("description") != plugins.get(name, {}).get("description"):
-                problems.append(f"{path.relative_to(ROOT)}: {name} description differs from the manifest")
+            if client != "codex":
+                for field in ("description", "displayName", "author", "homepage", "keywords"):
+                    if entry.get(field) != plugins.get(name, {}).get(field):
+                        problems.append(f"{path.relative_to(ROOT)}: {name} {field} differs from the manifest")
 
 
 def main() -> int:
