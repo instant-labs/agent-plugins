@@ -8,10 +8,9 @@ argument-hint: <name> [--distance] [--limit N]
 
 Generate domain alternatives for: $ARGUMENTS
 
-Call `generate_domain_variations` with `name` set to the
+Call `generate_domain_variations` on the `instant` MCP server with `name` set to the
 first argument, lowercased, with any extension, spaces, and leading dots
-stripped. The server does not normalize input; `acme.com` yields
-`theacme.com.com`.
+stripped. The server rejects names that contain an extension or spaces.
 Pass `sort: "distance"` when `--distance` is present, otherwise leave `sort`
 unset. Pass `limit` when `--limit N` is present, otherwise 20.
 

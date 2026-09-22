@@ -1,0 +1,42 @@
+{
+  "name": "instant",
+  "version": "2.0.0",
+  "description": "Find available domains and brandable names with instant.ai. Check names across extensions, verify domains in bulk, generate alternatives, and search USPTO trademark records. Free, with no account or API key required.",
+  "author": {
+    "name": "instant.ai",
+    "url": "https://instant.ai"
+  },
+  "homepage": "https://instant.ai/mcp",
+  "repository": "https://github.com/instant-labs/agent-plugins.git",
+  "license": "MIT",
+  "keywords": [
+    "instant",
+    "instant.ai",
+    "instant domain search",
+    "instantdomainsearch.com"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Instant",
+    "shortDescription": "Find domains and name ideas with instant.ai.",
+    "longDescription": "Find available domains and brandable names with instant.ai. Check names across extensions, verify domains in bulk, generate alternatives, and search USPTO trademark records. Free, with no account or API key required.",
+    "developerName": "instant.ai",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://instant.ai",
+    "privacyPolicyURL": "https://instant.ai/policies/privacy",
+    "termsOfServiceURL": "https://instant.ai/policies/terms",
+    "brandColor": "#000000",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg",
+    "defaultPrompt": [
+      "Is acme.com available, and what are the best alternatives if not?",
+      "Check shipwright across .com, .dev, .io, and .ai",
+      "Give me 10 brandable names for a matcha cafe with an available .com"
+    ],
+    "screenshots": []
+  }
+}

@@ -1,12 +1,13 @@
-# Instant Domain Search
+# Instant
 
-Domain availability search inside your coding agent. Check a name across
+Domain search and name ideas from [instant.ai](https://instant.ai), inside your
+coding agent. Check a name across
 hundreds of extensions, verify full domain names in bulk, and generate
-alternatives when a name is taken. Every result links to the registration page
-on [instantdomainsearch.com](https://instantdomainsearch.com).
+alternatives when a name is taken. Every domain result links to the registration
+page on [instantdomainsearch.com](https://instantdomainsearch.com).
 
 The plugin connects the agent to the hosted MCP server at
-`https://api.instantdomainsearch.com/mcp`. It is free and needs
+`https://mcp.instant.ai/mcp`. It is free and needs
 no account or API key.
 
 ## Install
@@ -16,16 +17,16 @@ short:
 
 ```sh
 claude plugin marketplace add instant-labs/agent-plugins
-claude plugin install instantdomainsearch@instant-marketplace
+claude plugin install instant@instant-marketplace
 
 codex plugin marketplace add https://github.com/instant-labs/agent-plugins
-codex plugin add instantdomainsearch@instant-marketplace
+codex plugin add instant@instant-marketplace
 
 grok plugin marketplace add instant-labs/agent-plugins
-grok plugin install instantdomainsearch --trust
+grok plugin install instant --trust
 ```
 
-Cursor and Grok Bot: search for **Instant Domain Search** under Settings →
+Cursor and Grok Bot: search for **Instant** under Settings →
 Plugins, or import `https://github.com/instant-labs/agent-plugins` as a team
 marketplace.
 
@@ -33,20 +34,22 @@ marketplace.
 
 | Component | Name | Purpose |
 | --- | --- | --- |
-| MCP server | `instantdomainsearch` | `search_domains`, `check_domain_availability`, `generate_domain_variations` |
-| Skill | `instantdomainsearch` | When to call which tool, argument rules, how to read and present results |
+| MCP server | `instant` | `search_domains`, `check_domain_availability`, `generate_domain_variations` |
+| Skill | `instant` | When to call which tool, argument rules, how to read and present results |
 | Skill | `domain-brainstorm` | Generate name ideas and check them for available domains in one pass |
 | Command | `/domain <name> [tld ...]` or `/domain a.com b.io` | Check a name across extensions, or a list of full names |
 | Command | `/domain-variations <name>` | Prefix and suffix alternatives for a taken name |
 
 Clients that treat skills as slash commands also expose `/domain-brainstorm`.
+Claude Code namespaces commands as `/instant:domain`,
+`/instant:domain-variations`, and `/instant:domain-brainstorm`.
 Clients prefix tool names with the server, for example
-`instantdomainsearch__search_domains` in Grok Build.
+`instant__search_domains` in Grok Build.
 
 ## Network and credentials
 
 - The only endpoint the plugin calls is
-  `https://api.instantdomainsearch.com/mcp`, the hosted MCP
+  `https://mcp.instant.ai/mcp`, the hosted MCP
   server, over streamable HTTP.
 - No credentials. The server takes no API key, token, or sign-in, and the
   plugin sets no headers.
@@ -72,8 +75,10 @@ Clients prefix tool names with the server, for example
 ## Support
 
 Setup guides for other clients live at
-[instantdomainsearch.com/mcp](https://instantdomainsearch.com/mcp). Open an
-issue in this repository for plugin problems.
+[instant.ai/mcp](https://instant.ai/mcp). Open an
+issue in this repository for plugin problems, or [contact Instant](https://instant.ai/contact).
+See the [privacy policy](https://instant.ai/policies/privacy) and
+[terms of use](https://instant.ai/policies/terms).
 
 ## License
 
