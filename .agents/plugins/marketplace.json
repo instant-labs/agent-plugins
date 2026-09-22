@@ -1,14 +1,14 @@
 {
   "name": "instant-marketplace",
   "interface": {
-    "displayName": "Instant Labs"
+    "displayName": "instant.ai"
   },
   "plugins": [
     {
-      "name": "instantdomainsearch",
+      "name": "instant",
       "source": {
         "source": "local",
-        "path": "./plugins/instantdomainsearch"
+        "path": "./plugins/instant"
       },
       "policy": {
         "installation": "AVAILABLE",

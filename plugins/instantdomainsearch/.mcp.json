@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "instantdomainsearch": {
-      "type": "http",
-      "url": "https://api.instantdomainsearch.com/mcp"
-    }
-  }
-}
