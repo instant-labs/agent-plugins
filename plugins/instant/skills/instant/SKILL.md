@@ -98,12 +98,6 @@ Call `get_trademark_details` with the returned eight-digit `serialNumber` as
 goods and services, and snapshot freshness. An empty search or an available
 domain does not establish trademark clearance.
 
-## Tool feedback
-
-The server also exposes `submit_feedback`. Use it only when the user asks to
-send tool feedback. Exclude search queries, domain names, results, and private
-details from the message.
-
 ## Example
 
 User: "I'm building a CLI called shipwright. Can I get the domain?"
