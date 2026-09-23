@@ -38,7 +38,7 @@ If you installed this plugin under its old id, follow the
 
 | Component | Name | Purpose |
 | --- | --- | --- |
-| MCP server | `instant` | Domain search, USPTO trademark records, and optional tool feedback |
+| MCP server | `instant` | Domain search and USPTO trademark records |
 | Skill | `instant` | When to call which tool, argument rules, how to read and present results |
 | Skill | `domain-brainstorm` | Generate name ideas and check them for available domains in one pass |
 | Command | `/domain <name> [tld ...]` or `/domain a.com b.io` | Check a name across extensions, or a list of full names |
@@ -55,8 +55,6 @@ The hosted server exposes:
 - `search_domains`, `check_domain_availability`, and `generate_domain_variations`
   for domain searches.
 - `search_trademarks` and `get_trademark_details` for indexed USPTO records.
-- `submit_feedback` for optional tool observations. Feedback must exclude search
-  queries, domain names, results, and private details.
 
 ## Network and credentials
 
@@ -67,9 +65,8 @@ The hosted server exposes:
   plugin sets no headers.
 - No hooks, agents, scripts, or local processes. The plugin is the MCP pointer
   plus markdown.
-- Tool calls send their arguments to Instant's hosted server. Searches read
-  domain or trademark data; `submit_feedback` writes feedback when requested.
-  The plugin does not register or purchase domains.
+- Tool calls send their arguments to Instant's hosted server. Every tool reads
+  domain or trademark data. The plugin does not register or purchase domains.
 
 ## Notes
 

@@ -24,8 +24,7 @@
     "developerName": "instant.ai",
     "category": "Developer Tools",
     "capabilities": [
-      "Read",
-      "Write"
+      "Read"
     ],
     "websiteURL": "https://instant.ai",
     "privacyPolicyURL": "https://instant.ai/policies/privacy",
