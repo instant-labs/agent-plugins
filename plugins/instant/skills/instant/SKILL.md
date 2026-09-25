@@ -28,7 +28,7 @@ show them with the server name as a prefix; the tool is the same.
 | --- | --- | --- |
 | `search_domains` | One name, many extensions | `name` (label only, no extension), `tlds` (optional array, no leading dots), `limit` (1-100, default 32) |
 | `check_domain_availability` | Specific full domain names | `domains` (array of `label.tld`, at most 50) |
-| `generate_domain_variations` | The name is taken and the user wants alternatives on the same root | `name` (label only), `sort` (`rank` default, or `distance`), `limit` (1-100, default 32) |
+| `generate_domain_variations` | The name is taken and the user wants alternatives on the same root | `name` (label only), `limit` (1-100, default 32) |
 
 ### Choosing a tool
 
