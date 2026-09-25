@@ -1,7 +1,7 @@
 {
   "name": "instant-marketplace",
   "owner": {
-    "name": "instant.ai"
+    "name": "Instant AI"
   },
   "metadata": {
     "description": "instant.ai plugins for Grok Build"
@@ -12,7 +12,7 @@
       "source": "./plugins/instant",
       "description": "Find available domains and brandable names with instant.ai. Check names across extensions, verify domains in bulk, generate alternatives, and search USPTO trademark records. Free, with no account or API key required.",
       "author": {
-        "name": "instant.ai",
+        "name": "Instant AI",
         "url": "https://instant.ai"
       },
       "homepage": "https://instant.ai/mcp",
