@@ -22,7 +22,7 @@ Rules:
   server rejects malformed domain input.
 
 Reply with a short table: domain, status (available, taken, or unknown when
-`isRegistered` is null), and the `buy_url` as a markdown link for available
+`isRegistered` is null), and the `research_url` as a markdown link for available
 names. Mention aftermarket listings or premium prices when present; prices are
 USD cents. Note that
 status is as of the last index build.
