@@ -3,8 +3,8 @@
 Domain search and name ideas from [instant.ai](https://instant.ai), inside your
 coding agent. Check a name across
 hundreds of extensions, verify full domain names in bulk, and generate
-alternatives when a name is taken. Every domain result links to the registration
-page on [instantdomainsearch.com](https://instantdomainsearch.com). Search indexed
+alternatives when a name is taken. Every domain result links to the domain's
+research page on [instantdomainsearch.com](https://instantdomainsearch.com). Search indexed
 USPTO trademark records and inspect matching filings while choosing a name.
 
 The plugin connects the agent to the hosted MCP server at
@@ -72,7 +72,7 @@ The hosted server exposes:
 
 - Registration status comes from a search index built from registry zone
   files and DNS observation feeds, refreshed daily, not from a live registry
-  query. The registration page runs the live check.
+  query.
 - `isRegistered` is `true`, `false`, or `null` when the index has no data for
   that extension.
 - Prices (`premium.usd_cents`, `listings.lowestPrice`, `markets[].price`) are

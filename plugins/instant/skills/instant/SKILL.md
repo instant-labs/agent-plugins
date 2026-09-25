@@ -16,7 +16,8 @@ description: >-
 The `instant` MCP server from [instant.ai](https://instant.ai) reports domain registration status from
 the index behind [instantdomainsearch.com](https://instantdomainsearch.com).
 It needs no account, API key, or configuration. Every domain result carries a
-`buy_url`, the page where the user registers the domain.
+`research_url`, the domain's research page on instantdomainsearch.com, with its
+registration status, registrar prices, and WHOIS details.
 
 ## Domain tools
 
@@ -27,7 +28,7 @@ show them with the server name as a prefix; the tool is the same.
 | --- | --- | --- |
 | `search_domains` | One name, many extensions | `name` (label only, no extension), `tlds` (optional array, no leading dots), `limit` (1-100, default 32) |
 | `check_domain_availability` | Specific full domain names | `domains` (array of `label.tld`, at most 50) |
-| `generate_domain_variations` | The name is taken and the user wants alternatives on the same root | `name` (label only), `sort` (`rank` default, or `distance`), `limit` (1-100, default 32) |
+| `generate_domain_variations` | The name is taken and the user wants alternatives on the same root | `name` (label only), `limit` (1-100, default 32) |
 
 ### Choosing a tool
 
@@ -70,17 +71,17 @@ Each domain in a result has:
   standard.
 - All prices are USD cents: `premium.usd_cents`, `listings.lowestPrice`, and
   `markets[].price`. `400000` is $4,000.
-- `buy_url`: the registration page on instantdomainsearch.com.
+- `research_url`: the domain's research page on instantdomainsearch.com.
 
 Status comes from the search index, built from registry zone files and DNS
 observation feeds, not from a live registry query. Say "not registered as of
-the last index build" rather than promising the name is free; the registration
-page runs the live check.
+the last index build" rather than promising the name is free, and send the user
+to the research page before they register it.
 
 ## Presenting results
 
 - Lead with what the user asked for: available names first, then taken names.
-- Render `buy_url` as a markdown link, for example `[Register acme.io](https://instantdomainsearch.com/get/acme.io?src=mcp)`.
+- Render `research_url` as a markdown link on the domain name, for example `[acme.io](https://instantdomainsearch.com/research?q=acme.io&src=mcp)`.
 - Treat `null` as unknown, not available.
 - Mention aftermarket listings and premium prices when present; a listing alone does not prove the domain is registered.
 - Do not list every field. Name, status, and the link are enough unless the user asks for more.
@@ -104,4 +105,4 @@ User: "I'm building a CLI called shipwright. Can I get the domain?"
 
 1. Call `search_domains` with `{"name": "shipwright", "tlds": ["com", "dev", "io", "sh"]}`.
 2. If every result is registered, call `generate_domain_variations` with `{"name": "shipwright", "limit": 10}`.
-3. Reply with the available names and their registration links, and note which were taken.
+3. Reply with the available names and their research links, and note which were taken.

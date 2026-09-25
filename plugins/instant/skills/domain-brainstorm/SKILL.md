@@ -32,7 +32,7 @@ and expand on the best root when nothing fits.
    `{"name": "<root>", "limit": 15}`, or `search_domains` with
    `{"name": "<root>"}` to try other extensions.
 5. **Present a shortlist.** Five to ten names, each with a one-line reason and
-   its `buy_url` as a markdown link. Note aftermarket listings or premium
+   its `research_url` as a markdown link. Note aftermarket listings or premium
    prices when present (prices are USD cents). Say the status is as of the
    last index build.
 
