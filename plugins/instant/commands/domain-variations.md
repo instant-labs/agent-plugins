@@ -13,6 +13,8 @@ first argument, lowercased, with any extension, spaces, and leading dots
 stripped. The server rejects names that contain an extension or spaces.
 Pass `limit` when `--limit N` is present, otherwise 20.
 
-Results are `.com` only. Reply with the available names first, each with its
+Results are `.com` only. Reply with names not registered in the index first, each with its
 `research_url` as a markdown link, then a short line on how many were taken. Offer
 to check the best names on other extensions with `/domain <name> io dev ai`.
+Note that status is as of the last index build and availability must be
+confirmed with a registrar before registration.

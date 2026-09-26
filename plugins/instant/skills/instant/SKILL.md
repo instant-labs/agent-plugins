@@ -6,8 +6,8 @@ description: >-
   available, taken, or free; wants to check a name across extensions (.com,
   .io, .ai, .dev, and hundreds more); needs alternatives because a name is
   taken; or is picking a domain for a project, product, startup, or side
-  project. Also use when naming a new app or repository so the suggested
-  name comes with a domain the user can actually register. Also use when
+  project. Also use when naming a new app or repository and the user wants
+  domain registration status checked alongside name ideas. Also use when
   the user asks to search USPTO trademark records or inspect a filing.
 ---
 
@@ -75,8 +75,9 @@ Each domain in a result has:
 
 Status comes from the search index, built from registry zone files and DNS
 observation feeds, not from a live registry query. Say "not registered as of
-the last index build" rather than promising the name is free, and send the user
-to the research page before they register it.
+the last index build" rather than promising the name is free. Link to the
+research page and tell the user to confirm availability with a registrar
+before registering it.
 
 ## Presenting results
 

@@ -21,8 +21,9 @@ Rules:
 - Lowercase names, strip spaces, and remove leading dots from extensions. The
   server rejects malformed domain input.
 
-Reply with a short table: domain, status (available, taken, or unknown when
+Reply with a short table: domain, indexed status (not registered, registered, or unknown when
 `isRegistered` is null), and the `research_url` as a markdown link for available
 names. Mention aftermarket listings or premium prices when present; prices are
 USD cents. Note that
-status is as of the last index build.
+status is as of the last index build and availability must be confirmed with a
+registrar before registration.
