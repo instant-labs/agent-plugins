@@ -1,9 +1,10 @@
 # Instant agent plugins
 
-Plugins from [instant.ai](https://instant.ai) for coding agents. Each plugin bundles
+Plugins from [instant.ai](https://instant.ai) for Claude and coding agents. Each plugin bundles
 an MCP server pointer, skills that teach the agent when and how to use it, and
-slash commands. The same plugin directory installs into Claude Code, Codex,
-Cursor, Grok Bot, and Grok Build; only the manifest file differs per client.
+slash commands. The same plugin directory installs into Claude chat, Cowork,
+Claude Code, Codex, Cursor, Grok Bot, and Grok Build; only the manifest file
+differs per client.
 
 | Plugin | What it does | MCP server |
 | --- | --- | --- |
@@ -23,6 +24,22 @@ names under `plugins/`.
 claude plugin marketplace add instant-labs/agent-plugins
 claude plugin install instant@instant-marketplace
 ```
+
+### Claude chat and Cowork
+
+1. Open **Customize → Plugins → Add → Add marketplace** and enter
+   `https://github.com/instant-labs/agent-plugins`.
+2. Install **Instant** from `instant-marketplace`.
+3. Open the plugin's **Connectors** tab and add or connect the Instant server
+   at `https://mcp.instant.ai/mcp`. No account or sign-in is needed for Instant.
+   On Claude Team and Enterprise, an Owner first adds the connector for the
+   organization.
+4. Try "Check shipwright across .com, .dev, .io, and .ai" or "Brainstorm five
+   names for a matcha cafe and check their .com registration status."
+
+Skills and commands work in chat and Cowork; chat treats commands as skills.
+If you already added the Instant connector, use the same server URL so Claude
+can reuse that connection.
 
 ### Codex
 
@@ -102,7 +119,7 @@ MCP server by hand, replace its entry with `instant` at
 
 ```text
 .grok-plugin/marketplace.json      catalog read by Grok Build
-.claude-plugin/marketplace.json    catalog read by Claude Code
+.claude-plugin/marketplace.json    catalog read by Claude and Claude Code
 .cursor-plugin/marketplace.json    catalog read by Cursor and Grok Bot
 .agents/plugins/marketplace.json   catalog read by Codex
 plugins/<name>/

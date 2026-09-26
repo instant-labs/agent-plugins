@@ -2,18 +2,18 @@
 name: domain-brainstorm
 description: >-
   Brainstorm brandable names for a product, company, or project and check
-  each one for an available domain in the same pass. Use when the user asks
+  each one's indexed domain registration status in the same pass. Use when the user asks
   for name ideas, business names, startup names, app names, or "what should I
   call this", and a domain is part of what makes a name usable. Pairs
-  generated ideas with the instant MCP tools so every suggestion
-  is one the user can register.
+  generated ideas with the instant MCP tools so suggestions include checked
+  registration status rather than guesses about availability.
 ---
 
 # Domain brainstorm
 
-Name ideas are only useful when the domain is available. This skill runs the
-loop: generate candidates, check them in bulk, keep the ones that are free,
-and expand on the best root when nothing fits.
+Generate candidates, check their registration status in bulk, shortlist names
+not registered in the index, and expand on the best root when nothing fits.
+Index results do not guarantee that a registrar can register a name.
 
 ## Workflow
 
@@ -34,7 +34,8 @@ and expand on the best root when nothing fits.
 5. **Present a shortlist.** Five to ten names, each with a one-line reason and
    its `research_url` as a markdown link. Note aftermarket listings or premium
    prices when present (prices are USD cents). Say the status is as of the
-   last index build.
+   last index build and tell the user to confirm availability with a registrar
+   before registering a name.
 
 ## Guardrails
 

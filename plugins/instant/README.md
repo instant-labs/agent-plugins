@@ -1,8 +1,8 @@
 # Instant
 
-Domain search and name ideas from [instant.ai](https://instant.ai), inside your
-coding agent. Check a name across
-hundreds of extensions, verify full domain names in bulk, and generate
+Domain search and name ideas from [instant.ai](https://instant.ai), inside
+Claude or your coding agent. Check indexed registration status across
+hundreds of extensions, check full domain names in bulk, and generate
 alternatives when a name is taken. Every domain result links to the domain's
 research page on [instantdomainsearch.com](https://instantdomainsearch.com). Search indexed
 USPTO trademark records and inspect matching filings while choosing a name.
@@ -13,8 +13,23 @@ no account or API key.
 
 ## Install
 
-See the [repository README](../../README.md#install) for every client. In
-short:
+### Claude chat and Cowork
+
+1. Open **Customize → Plugins → Add → Add marketplace** and enter
+   `https://github.com/instant-labs/agent-plugins`.
+2. Install **Instant** from `instant-marketplace`.
+3. Open the plugin's **Connectors** tab and add or connect
+   `https://mcp.instant.ai/mcp`. Instant needs no account or sign-in. On Claude
+   Team and Enterprise, an Owner first adds the connector for the organization.
+4. Ask "Check shipwright across .com, .dev, .io, and .ai" or "Brainstorm five
+   names for a matcha cafe and check their .com registration status."
+
+If you already added the Instant connector, use the same URL to reuse it.
+
+### Coding agents
+
+See the [repository README](https://github.com/instant-labs/agent-plugins#install)
+for every client. In short:
 
 ```sh
 claude plugin marketplace add instant-labs/agent-plugins
@@ -32,7 +47,8 @@ Plugins, or import `https://github.com/instant-labs/agent-plugins` as a team
 marketplace.
 
 If you installed this plugin under its old id, follow the
-[upgrade steps](../../README.md#upgrading-from-instantdomainsearch) first.
+[upgrade steps](https://github.com/instant-labs/agent-plugins#upgrading-from-instantdomainsearch)
+first.
 
 ## What you get
 
@@ -44,6 +60,7 @@ If you installed this plugin under its old id, follow the
 | Command | `/domain <name> [tld ...]` or `/domain a.com b.io` | Check a name across extensions, or a list of full names |
 | Command | `/domain-variations <name>` | Prefix and suffix alternatives for a taken name |
 
+Claude chat treats commands as skills and applies them when they fit the request.
 Clients that treat skills as slash commands also expose `/domain-brainstorm`.
 Claude Code namespaces commands as `/instant:domain`,
 `/instant:domain-variations`, and `/instant:domain-brainstorm`.
@@ -72,7 +89,8 @@ The hosted server exposes:
 
 - Registration status comes from a search index built from registry zone
   files and DNS observation feeds, refreshed daily, not from a live registry
-  query.
+  query. A name absent from the index is not guaranteed to be available;
+  confirm availability with a registrar before registering it.
 - `isRegistered` is `true`, `false`, or `null` when the index has no data for
   that extension.
 - Prices (`premium.usd_cents`, `listings.lowestPrice`, `markets[].price`) are
@@ -96,4 +114,4 @@ See the [privacy policy](https://instant.ai/policies/privacy) and
 
 ## License
 
-MIT. See [LICENSE](../../LICENSE).
+MIT. See [LICENSE](https://github.com/instant-labs/agent-plugins/blob/main/LICENSE).
