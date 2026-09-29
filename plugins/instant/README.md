@@ -9,7 +9,8 @@ USPTO trademark records and inspect matching filings while choosing a name.
 
 The plugin connects the agent to the hosted MCP server at
 `https://mcp.instant.ai/mcp`. It is free and needs
-no account or API key.
+no account or API key. Instant may earn referral fees on registrations completed on
+instantdomainsearch.com.
 
 ## Install
 
