@@ -16,6 +16,10 @@ instantdomainsearch.com.
 
 ### Claude chat and Cowork
 
+Install **Instant** from the [Claude directory](https://claude.ai/directory/instant).
+
+To install from this repository instead:
+
 1. Open **Customize → Plugins → Add → Add marketplace** and enter
    `https://github.com/instant-labs/agent-plugins`.
 2. Install **Instant** from `instant-marketplace`.
@@ -26,6 +30,10 @@ instantdomainsearch.com.
    names for a matcha cafe and check their .com registration status."
 
 If you already added the Instant connector, use the same URL to reuse it.
+
+### ChatGPT
+
+Install **Instant** from the [ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ab70b1720748191bcfd401a52975db0).
 
 ### Coding agents
 

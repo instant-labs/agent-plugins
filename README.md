@@ -1,9 +1,9 @@
 # Instant agent plugins
 
-Plugins from [instant.ai](https://instant.ai) for Claude and coding agents. Each plugin bundles
+Plugins from [instant.ai](https://instant.ai) for Claude, ChatGPT, and coding agents. Each plugin bundles
 an MCP server pointer, skills that teach the agent when and how to use it, and
 slash commands. The same plugin directory installs into Claude chat, Cowork,
-Claude Code, Codex, Cursor, Grok Bot, and Grok Build; only the manifest file
+Claude Code, ChatGPT, Codex, Cursor, Grok Bot, and Grok Build; only the manifest file
 differs per client.
 
 | Plugin | What it does | MCP server |
@@ -27,6 +27,10 @@ claude plugin install instant@instant-marketplace
 
 ### Claude chat and Cowork
 
+Install **Instant** from the [Claude directory](https://claude.ai/directory/instant).
+
+To install from this repository instead:
+
 1. Open **Customize → Plugins → Add → Add marketplace** and enter
    `https://github.com/instant-labs/agent-plugins`.
 2. Install **Instant** from `instant-marketplace`.
@@ -40,6 +44,11 @@ claude plugin install instant@instant-marketplace
 Skills and commands work in chat and Cowork; chat treats commands as skills.
 If you already added the Instant connector, use the same server URL so Claude
 can reuse that connection.
+
+### ChatGPT
+
+Install **Instant** from the [ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ab70b1720748191bcfd401a52975db0).
+No account or sign-in is needed for Instant.
 
 ### Codex
 
