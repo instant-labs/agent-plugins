@@ -64,7 +64,7 @@ first.
 | Component | Name | Purpose |
 | --- | --- | --- |
 | MCP server | `instant` | Domain search and USPTO trademark records |
-| Skill | `instant` | When to call which tool, argument rules, how to read and present results |
+| Skill | `instant` | When to call which tool, argument rules, how to read results |
 | Skill | `domain-brainstorm` | Generate name ideas and check them for available domains in one pass |
 | Command | `/domain <name> [tld ...]` or `/domain a.com b.io` | Check a name across extensions, or a list of full names |
 | Command | `/domain-variations <name>` | Prefix and suffix alternatives for a taken name |

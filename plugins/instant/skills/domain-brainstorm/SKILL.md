@@ -31,8 +31,8 @@ Index results do not guarantee that a registrar can register a name.
    taken on `.com`, call `generate_domain_variations` with
    `{"name": "<root>", "limit": 15}`, or `search_domains` with
    `{"name": "<root>"}` to try other extensions.
-5. **Present a shortlist.** Five to ten names, each with a one-line reason and
-   its `research_url` as a markdown link. Note aftermarket listings or premium
+5. **Present a shortlist.** Five to ten names, each with a one-line reason.
+   Note aftermarket listings or premium
    prices when present (prices are USD cents). Say the status is as of the
    last index build and tell the user to confirm availability with a registrar
    before registering a name.
