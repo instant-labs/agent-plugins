@@ -9,11 +9,16 @@ USPTO trademark records and inspect matching filings while choosing a name.
 
 The plugin connects the agent to the hosted MCP server at
 `https://mcp.instant.ai/mcp`. It is free and needs
-no account or API key.
+no account or API key. Instant may earn referral fees on registrations completed on
+instantdomainsearch.com.
 
 ## Install
 
 ### Claude chat and Cowork
+
+Install **Instant** from the [Claude directory](https://claude.ai/directory/instant).
+
+To install from this repository instead:
 
 1. Open **Customize → Plugins → Add → Add marketplace** and enter
    `https://github.com/instant-labs/agent-plugins`.
@@ -25,6 +30,10 @@ no account or API key.
    names for a matcha cafe and check their .com registration status."
 
 If you already added the Instant connector, use the same URL to reuse it.
+
+### ChatGPT
+
+Install **Instant** from the [ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ab70b1720748191bcfd401a52975db0).
 
 ### Coding agents
 
@@ -55,7 +64,7 @@ first.
 | Component | Name | Purpose |
 | --- | --- | --- |
 | MCP server | `instant` | Domain search and USPTO trademark records |
-| Skill | `instant` | When to call which tool, argument rules, how to read and present results |
+| Skill | `instant` | When to call which tool, argument rules, how to read results |
 | Skill | `domain-brainstorm` | Generate name ideas and check them for available domains in one pass |
 | Command | `/domain <name> [tld ...]` or `/domain a.com b.io` | Check a name across extensions, or a list of full names |
 | Command | `/domain-variations <name>` | Prefix and suffix alternatives for a taken name |

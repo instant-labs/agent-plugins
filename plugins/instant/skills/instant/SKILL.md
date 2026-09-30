@@ -61,12 +61,14 @@ Each domain in a result has:
 
 - `label` and `tld`: the two halves of the name.
 - `isRegistered`: `true` (in the zone or observed in DNS), `false` (extension
-  covered, name absent), or `null` (the index has no data for that extension).
+  covered, name absent), or `null` (the index has no data for that extension,
+  so the status is unknown, not available).
   `search_domains` reports `false` where `check_domain_availability` would
   report `null`, so confirm an unusual extension with
   `check_domain_availability` before calling it available.
 - `rank`: how common the extension is, higher is more common.
-- `listings` and `markets`: aftermarket listings when the name is for sale.
+- `listings` and `markets`: aftermarket listings when the name is for sale. A
+  listing alone does not prove the domain is registered.
   `premium` with `is_premium: true` means the registry prices the name above
   standard.
 - All prices are USD cents: `premium.usd_cents`, `listings.lowestPrice`, and
@@ -74,18 +76,9 @@ Each domain in a result has:
 - `research_url`: the domain's research page on instantdomainsearch.com.
 
 Status comes from the search index, built from registry zone files and DNS
-observation feeds, not from a live registry query. Say "not registered as of
-the last index build" rather than promising the name is free. Link to the
-research page and tell the user to confirm availability with a registrar
-before registering it.
-
-## Presenting results
-
-- Lead with what the user asked for: available names first, then taken names.
-- Render `research_url` as a markdown link on the domain name, for example `[acme.io](https://instantdomainsearch.com/research?q=acme.io&src=mcp)`.
-- Treat `null` as unknown, not available.
-- Mention aftermarket listings and premium prices when present; a listing alone does not prove the domain is registered.
-- Do not list every field. Name, status, and the link are enough unless the user asks for more.
+observation feeds, not from a live registry query. A name that is not
+registered in the index can still be unavailable at a registrar, so
+availability is confirmed only when a registrar accepts the registration.
 
 ## Trademark tools
 
@@ -106,4 +99,4 @@ User: "I'm building a CLI called shipwright. Can I get the domain?"
 
 1. Call `search_domains` with `{"name": "shipwright", "tlds": ["com", "dev", "io", "sh"]}`.
 2. If every result is registered, call `generate_domain_variations` with `{"name": "shipwright", "limit": 10}`.
-3. Reply with the available names and their research links, and note which were taken.
+3. Reply with the available names, and note which were taken.
